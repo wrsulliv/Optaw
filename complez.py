@@ -8,7 +8,7 @@ ASM_DIR = './output/asm'
 BIN_DIR = './output/bin'
 STDERR_DIR = './output/stderr'
 STDOUT_DIR = './output/stdout'
-TIMEOUT = 5
+TIMEOUT = 10 # Set the timeout in seconds
 
 # Program start
 import os  
