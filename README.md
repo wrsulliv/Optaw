@@ -24,7 +24,7 @@ run:      FAIL ***
 If the failure occured from a timeout then it will appear as:
 
 ```
-Run summary for (p551):
+Run summary for (p550):
 clang:    PASS
 llc:      PASS
 g++:      PASS
