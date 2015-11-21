@@ -31,6 +31,7 @@ g++:      PASS
 run:      FAIL *** TIMEOUT OCCURED
 ```
 
+The output files for each evaluation are stored in (./output/stdout) and (./output/stderr).  This includes the standard output and standard error of each file, respectively.  
 
 ## Parameters:  
 
