@@ -1,0 +1,8 @@
+./src/p367.c:5:30: warning: return type of 'main' is not 'int' [-Wmain-return-type]
+int to_initcap_file(FILE *); void main(int argc, char * argv[]){
+                             ^
+./src/p367.c:5:30: note: change return type to 'int'
+int to_initcap_file(FILE *); void main(int argc, char * argv[]){
+                             ^~~~
+                             int
+1 warning generated.

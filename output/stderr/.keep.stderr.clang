@@ -1,0 +1,2 @@
+clang: warning: ./src/.keep: 'linker' input unused
+clang: warning: argument unused during compilation: '-emit-llvm'

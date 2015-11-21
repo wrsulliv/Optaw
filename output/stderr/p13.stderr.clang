@@ -1,0 +1,21 @@
+./src/p13.c:17:11: error: expected ')'
+if (temp  0; j--)
+          ^
+./src/p13.c:17:4: note: to match this '('
+if (temp  0; j--)
+   ^
+./src/p13.c:17:12: warning: if statement has empty body [-Wempty-body]
+if (temp  0; j--)
+           ^
+./src/p13.c:17:12: note: put the semicolon on a separate line to silence this warning
+./src/p13.c:17:17: error: expected ';' after expression
+if (temp  0; j--)
+                ^
+                ;
+./src/p13.c:17:17: error: expected expression
+./src/p13.c:22:1: error: expected '}'
+^
+./src/p13.c:3:11: note: to match this '{'
+int main(){
+          ^
+1 warning and 4 errors generated.

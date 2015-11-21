@@ -1,0 +1,8 @@
+./src/p146.c:4:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
+void main(){
+^
+./src/p146.c:4:1: note: change return type to 'int'
+void main(){
+^~~~
+int
+1 warning generated.
