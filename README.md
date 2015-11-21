@@ -6,7 +6,7 @@
 
 ## Usage:
 
-* Clone this repo to a directory on a eecs583 machine
+* Clone this repo to a directory on an eecs583 machine
 * Put your fixed source code files in (src)
 * Using the terminal, navigate to the directory which contains "complez.py"
 * type "python complez.py"
