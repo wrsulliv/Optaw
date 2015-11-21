@@ -9,12 +9,15 @@ BIN_DIR = './output/bin'
 STDERR_DIR = './output/stderr'
 STDOUT_DIR = './output/stdout'
 TIMEOUT = 10 # Set the timeout in seconds
+OUTPUT_CSV = './output/results.csv'
 
 # Program start
 import os  
 import subprocess
 import threading
 
+# Create a dictionary to hold all the results
+results_file_handle = open(OUTPUT_CSV,'w')
 
 # Commnand Class:  Used to set a timeout for and execute a shell command.  
 # I found this "Command" class here:  http://stackoverflow.com/questions/1191374/using-module-subprocess-with-timeout
@@ -49,7 +52,7 @@ def printResults(name, failure, timeout):
 	if (not failure):
 		result_str = name + ' ' * spaces_needed + 'PASS'
 	else:
-		if (clang_timeout):
+		if (timeout):
 			result_str = name + ' ' * spaces_needed + 'FAIL *** TIMEOUT OCCURED'
 
 		else:
@@ -73,19 +76,20 @@ for fn in os.listdir(SRC_DIR):
 		gpp_command = Command('g++ -o ' + path_to_exe + ' ' + path_to_s + ' 2> ' + path_to_stderr + '.gpp')
 		run_command = Command(path_to_exe + ' 2> ' + path_to_stderr + '.run > ' + path_to_stdout + '.run')
 
-		(clang_failure, clang_timeout) = clang_command.run(TIMEOUT);
-		(llc_failure, llc_timeout) = llc_command.run(TIMEOUT);
-		(gpp_failure, gpp_timeout) = gpp_command.run(TIMEOUT);
-		(run_failure, run_timeout) = run_command.run(TIMEOUT);
+		(clang_failure, clang_timeout) = clang_command.run(TIMEOUT)
+		(llc_failure, llc_timeout) = llc_command.run(TIMEOUT)
+		(gpp_failure, gpp_timeout) = gpp_command.run(TIMEOUT)
+		(run_failure, run_timeout) = run_command.run(TIMEOUT)
+		results_string = file_name + ',' + str(int(clang_failure == 0)) + ',' + str(int(clang_timeout)) + ',' + str(int(llc_failure == 0)) + ',' + str(int(llc_timeout)) + ',' + str(int(gpp_failure == 0)) + ',' + str(int(gpp_timeout)) + ',' + str(int(run_failure == 0)) + ',' + str(int(run_timeout))
+		results_file_handle.write(results_string + '\n')
+
 
 		# Print the results
 		print("Run summary for (" + file_name + "):")
-		printResults('clang', clang_failure, clang_timeout);
-		printResults('llc', llc_failure, llc_timeout);
-		printResults('g++', gpp_failure, gpp_timeout);
-		printResults('run', run_failure, run_timeout);
+		printResults('clang', clang_failure, clang_timeout)
+		printResults('llc', llc_failure, llc_timeout)
+		printResults('g++', gpp_failure, gpp_timeout)
+		printResults('run', run_failure, run_timeout)
 
-
-
-
+results_file_handle.close()
 
