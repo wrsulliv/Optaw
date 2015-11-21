@@ -33,6 +33,12 @@ run:      FAIL *** TIMEOUT OCCURED
 
 The output files for each evaluation are stored in (./output/stdout) and (./output/stderr).  This includes the standard output and standard error of each file, respectively.  
 
+More importantly, a CSV file (results.csv) is created in (./output).  This CSV file has the following format:
+
+```
+[benchmark_name, clang_success, clang_timeout_occured, llc_success, llc_timeout_occured, g++_success, g++_timeout_occured, run_success, run_timeout_occured]
+```
+
 ## Parameters:  
 
 You can change the timeout and other user defined variables at the top of (complez.py).  Note that the default timeout is 10 seconds.  
