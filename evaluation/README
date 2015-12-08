@@ -1,0 +1,15 @@
+evaluatePredictions.py expects 3 files to exist.
+
+1) ../runtime_stats.csv
+    This file is the ground truth calculated by Will
+    To change it, alter line 173
+
+2) ../clsOpinionsConf.txt
+    This file is the classifier performance from Kostas
+    To change it, alter line 137
+
+3) ../rgsOpins.txt
+    This file is the regressor performance from Kostas
+    To change it, alter line 87
+
+Alter line 14 or 15 to evaluate either the classifiers or regressors.
